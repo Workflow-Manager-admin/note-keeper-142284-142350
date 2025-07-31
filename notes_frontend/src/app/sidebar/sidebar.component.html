@@ -1,0 +1,17 @@
+<div class="sidebar-header">
+  <button class="add-btn" (click)="addNew()" title="Add Note">
+    <span aria-label="plus">＋</span>
+    <span>Add</span>
+  </button>
+  <div class="sidebar-title">Notes</div>
+</div>
+<div class="search-box">
+  <input type="text" [(ngModel)]="searchString" (input)="onSearchChange()" placeholder="Search notes..." />
+  <button *ngIf="searchString" (click)="clearSearch()" aria-label="Clear" class="clear-btn">×</button>
+</div>
+<ul class="notes-list">
+  <li *ngFor="let note of notes | filter:searchString" [class.active]="note.id === activeId" (click)="select(note.id)">
+    <div class="item-title">{{ note.title || 'Untitled' }}</div>
+    <div class="item-date">{{ note.updatedAt | date:'MMM d, y HH:mm' }}</div>
+  </li>
+</ul>

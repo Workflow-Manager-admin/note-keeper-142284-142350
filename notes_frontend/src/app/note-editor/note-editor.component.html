@@ -1,0 +1,18 @@
+<div class="editor-container">
+  <div *ngIf="loading" class="loading">Saving...</div>
+  <form [formGroup]="noteForm" (ngSubmit)="saveNote()" *ngIf="noteForm">
+    <input type="text" formControlName="title" class="title-input" maxlength="60" [placeholder]="isNew ? 'New note title...' : 'Edit note title...'">
+    <textarea formControlName="content" class="body-input" rows="13" maxlength="10000" placeholder="Write your note here..."></textarea>
+    <div class="editor-actions">
+      <button class="primary-btn" type="submit" [disabled]="noteForm.invalid || loading">
+        {{ isNew ? 'Add Note' : 'Save Changes' }}
+      </button>
+      <button type="button" class="delete-btn" *ngIf="!isNew" (click)="deleteNote()" [disabled]="loading">
+        Delete
+      </button>
+    </div>
+  </form>
+  <div *ngIf="!noteForm && !loading">
+    <span>Select a note or add a new one!</span>
+  </div>
+</div>

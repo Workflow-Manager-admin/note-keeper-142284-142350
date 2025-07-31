@@ -1,0 +1,17 @@
+<div class="note-list-toolbar">
+  <button class="add-btn" (click)="addNewNote()">
+    <span aria-label="plus">＋</span>
+    New Note
+  </button>
+  <div style="flex: 1"></div>
+  <div class="list-title">All Notes</div>
+</div>
+<ul class="main-notes-list">
+  <li *ngFor="let note of notes">
+    <div class="list-note" (click)="openNote(note.id)">
+      <div class="note-title">{{ note.title || 'Untitled' }}</div>
+      <div class="note-date">{{ note.updatedAt|date:'MMM d, y HH:mm' }}</div>
+    </div>
+  </li>
+  <li *ngIf="!notes.length" class="no-notes">No notes found.</li>
+</ul>

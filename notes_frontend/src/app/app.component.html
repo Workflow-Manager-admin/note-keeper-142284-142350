@@ -1,3 +1,8 @@
-<div class="container">
-  <h1>{{ title }}</h1>
+<div class="notes-app-wrapper">
+  <aside class="sidebar" data-testid="sidebar">
+    <app-sidebar (selectNote)="onNoteSelected($event)" (addNote)="onAddNote()" (searchNotes)="onSearch($event)" [activeId]="selectedNoteId"></app-sidebar>
+  </aside>
+  <main class="main-content" data-testid="main-content">
+    <router-outlet></router-outlet>
+  </main>
 </div>

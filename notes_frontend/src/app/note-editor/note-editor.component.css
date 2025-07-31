@@ -1,0 +1,86 @@
+.editor-container {
+  padding: 34px 32px 12px 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.title-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #2196f3;
+  background: transparent;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #1a252f;
+  margin-bottom: 18px;
+  outline: none;
+  transition: border 0.16s;
+}
+.title-input:focus {
+  border-color: #f44336;
+}
+
+.body-input {
+  width: 100%;
+  min-height: 200px;
+  max-height: 60vh;
+  border: 1.5px solid #b7cdf6;
+  padding: 13px 8px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  border-radius: 7px;
+  margin-bottom: 14px;
+  background: #fffefc;
+  color: #313332;
+  outline: none;
+  transition: border-color 0.16s;
+}
+.body-input:focus {
+  border-color: #2196f3;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 16px;
+}
+.primary-btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 22px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.19s;
+}
+.primary-btn:hover {
+  background: #1769aa;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 19px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.delete-btn:hover {
+  background: #b71c1c;
+}
+
+.loading {
+  color: #2196f3;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+@media (max-width: 650px){
+  .editor-container { padding: 15px 8px 8px 8px;}
+  .title-input {font-size: 1.27rem;}
+  .editor-actions { gap: 10px;}
+}
